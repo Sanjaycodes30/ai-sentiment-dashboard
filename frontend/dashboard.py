@@ -1,11 +1,10 @@
+from model.sentiment_model import analyze_sentiment
 import streamlit as st
 import requests
 import pandas as pd
 import plotly.express as px
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-
-API_URL = "http://127.0.0.1:8000/predict"
 
 st.title("AI Sentiment Analysis Dashboard")
 
@@ -15,8 +14,7 @@ review = st.text_area("Enter your review")
 
 if st.button("Analyze Sentiment"):
 
-    response = requests.post(API_URL, json={"text": review})
-    result = response.json()
+    result = analyze_sentiment(review)
 
     sentiment = result["sentiment"]
     confidence = result["confidence"]
@@ -50,8 +48,7 @@ if st.button("Analyze Reviews"):
 
         if r.strip() != "":
 
-            response = requests.post(API_URL, json={"text": r})
-            result = response.json()
+            result = analyze_sentiment(r)
 
             results.append({
                 "Review": r,
