@@ -1,8 +1,12 @@
-fastapi
-uvicorn
-transformers
-torch
-pandas
 streamlit
+pandas
 plotly
 requests
+transformers
+torch
+spacy
+wordcloud
+matplotlib
+fastapi
+uvicorn
+altair
