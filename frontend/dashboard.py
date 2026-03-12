@@ -1,14 +1,11 @@
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud
-import plotly.express as px
-import pandas as pd
-import requests
-import streamlit as st
-from model.sentiment_model import analyze_sentiment
-import sys
-import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from model.sentiment_model import analyze_sentiment
+
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 
 st.title("AI Sentiment Analysis Dashboard")
